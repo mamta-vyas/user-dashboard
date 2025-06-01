@@ -13,7 +13,7 @@ This is a modern web app built with **Next.js + TypeScript** that allows users t
   - Users from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
   - Locally added user
 - ✅ Search by **name** or **city**
-- ✅ Routing with Next.js (`/add-user`, `/dashboard`)
+- ✅ Routing with Next.js (`/dashboard/AddUserPage`, `/dashboard`)
 - ✅ Clean, responsive UI with Tailwind CSS
 - ✅ Toast notifications with `react-hot-toast`
 
@@ -38,8 +38,8 @@ This is a modern web app built with **Next.js + TypeScript** that allows users t
 ```bash
 git clone https://github.com/mamta-vyas/user-dashboard.git
 cd user-dashboard
-2. Install dependencies
 
+2. Install dependencies
 npm install
 # or
 yarn
@@ -111,9 +111,7 @@ Form state is managed via React Context and stored in localStorage.
 
 🔍 Search Functionality
 The dashboard supports real-time search by:
-
 Name
-
 City
 
 Matching is case-insensitive and works for both fetched and submitted users.
