@@ -1,40 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🧾 Multi-Step User Form & Dashboard - Next.js App
 
-## Getting Started
+This is a modern web app built with **Next.js + TypeScript** that allows users to fill out a multi-step form and view all users (fetched from an API and locally added) on a searchable dashboard.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- ✅ Multi-step form using React Context (Step 1: Basic Info → Step 2: Address Info → Step 3: Confirm)
+- ✅ Save form data to `localStorage`
+- ✅ Final submitted user appears in the Dashboard
+- ✅ Dashboard displays:
+  - Users from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+  - Locally added user
+- ✅ Search by **name** or **city**
+- ✅ Routing with Next.js (`/add-user`, `/dashboard`)
+- ✅ Clean, responsive UI with Tailwind CSS
+- ✅ Toast notifications with `react-hot-toast`
+
+---
+
+## 🧱 Tech Stack
+
+- [Next.js](https://nextjs.org/) (App Router, Pages, Routing)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Context API](https://reactjs.org/docs/context.html)
+- [react-hot-toast](https://react-hot-toast.com/)
+- LocalStorage (for form data persistence)
+- JSONPlaceholder API (mock user data)
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/mamta-vyas/user-dashboard.git
+cd user-dashboard
+2. Install dependencies
+
+npm install
+# or
+yarn
+
+3. Start the development server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+App runs at: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧭 Routes
+Route	Description
+/	Redirects to /dashboard/AddUserPage
+/dashboard/AddUserPage	Multi-step user form
+/dashboard	Displays users + search bar
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+📝 Form Fields
+Step	Fields
+Step 1	name, email, phone
+Step 2	street, city, zip
+Step 3	Confirmation before submit
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Form state is managed via React Context and stored in localStorage.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+🗂️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+.
+├── README.md
+├── components
+│   ├── Header.tsx
+│   └── StepForm
+│       ├── StepOne.tsx
+│       ├── StepThree.tsx
+│       └── StepTwo.tsx
+├── context
+│   └── FormContext.tsx
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   ├── api
+│   │   └── hello.ts
+│   ├── dashboard
+│   │   ├── AddUserPage.tsx
+│   │   └── index.tsx
+│   └── index.tsx
+├── postcss.config.mjs
+├── public
+│   ├── favicon.ico
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── styles
+│   ├── Home.module.css
+│   ├── form.module.css
+│   └── globals.css
+├── tsconfig.json
+└── utils
+    ├── api.ts
+    └── validation.ts
 
-## Learn More
+10 directories, 30 files
 
-To learn more about Next.js, take a look at the following resources:
+🔍 Search Functionality
+The dashboard supports real-time search by:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Name
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+City
 
-## Deploy on Vercel
+Matching is case-insensitive and works for both fetched and submitted users.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔧 Utility Modules
+utils/validation.ts → Handles reading/writing user data to localStorage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+types/api.ts → Defines the User TypeScript interface
+
+Dark mode toggle
+
+
+
+💡 Future Enhancements
+Form validation (using react-hook-form or zod)
+
+Edit/delete users from dashboard
+
+Backend API for permanent storage
+
+Pagination on dashboard
+
+
+
+🙌 Acknowledgements
+JSONPlaceholder — for sample user data
+
+Tailwind CSS — for styling
+
+React Hot Toast — for toast notifications
+
+🧑‍💻 Author
+Made with ❤️ by Your Name
