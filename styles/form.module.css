@@ -1,0 +1,15 @@
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+}
